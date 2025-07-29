@@ -599,7 +599,8 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>conf</string>
+          <string>config</string>
+          <string>conf</string>
 					<string>ini</string>
 					<string>cfg</string>
 					<string>cnf</string>
@@ -740,6 +741,102 @@
 				</array>
 			</dict>
 		</dict>
+    <dict>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.plain-text</string>
+      </array>
+      <key>UTTypeDescription</key>
+      <string>Semicolon Separated Values</string>
+      <key>UTTypeIcons</key>
+      <dict/>
+      <key>UTTypeIdentifier</key>
+      <string>com.custom.ssv-data</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>ssv</string>
+        </array>
+        <key>public.mime-type</key>
+        <array>
+          <string>text/ssv</string>
+          <string>application/ssv</string>
+        </array>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.plain-text</string>
+        <string>public.comma-separated-values-text</string>
+      </array>
+      <key>UTTypeDescription</key>
+      <string>Comma Separated Values</string>
+      <key>UTTypeIcons</key>
+      <dict/>
+      <key>UTTypeIdentifier</key>
+      <string>com.custom.csv-data</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>csv</string>
+        </array>
+        <key>public.mime-type</key>
+        <array>
+          <string>text/csv</string>
+          <string>application/csv</string>
+          <string>text/x-csv</string>
+        </array>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.source-code</string>
+      </array>
+      <key>UTTypeDescription</key>
+      <string>Cisco IOS Configuration</string>
+      <key>UTTypeIcons</key>
+      <dict/>
+      <key>UTTypeIdentifier</key>
+      <string>com.custom.ios-data</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>ios</string>
+        </array>
+        <key>public.mime-type</key>
+        <array>
+          <string>text/plain</string>
+        </array>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.source-code</string>
+      </array>
+      <key>UTTypeDescription</key>
+      <string>Arista EOS Configuration</string>
+      <key>UTTypeIcons</key>
+      <dict/>
+      <key>UTTypeIdentifier</key>
+      <string>com.custom.eos-data</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>eos</string>
+        </array>
+        <key>public.mime-type</key>
+        <array>
+          <string>text/plain</string>
+        </array>
+      </dict>
+    </dict>
 	</array>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
@@ -1068,6 +1165,7 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>sh</string>
+					<string>bash</string>
 				</array>
 			</dict>
 		</dict>
@@ -1185,6 +1283,26 @@
 				<key>public.filename-extension</key>
 				<array>
 					<string>zsh</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.shell-script</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Batch Script</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>org.n8gray.bat</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>bat</string>
+					<string>cmd</string>
 				</array>
 			</dict>
 		</dict>
@@ -1453,30 +1571,30 @@
 				</array>
 			</dict>
 		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
-				<string>public.plain-text</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Latex</string>
-			<key>UTTypeIcons</key>
-			<dict/>
-			<key>UTTypeIdentifier</key>
-			<string>org.tug</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>latex</string>
-					<string>tex</string>
-				</array>
-				<key>public.mime-type</key>
-				<array>
-					<string>application/x-tex</string>
-				</array>
-			</dict>
-		</dict>
+    <dict>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.plain-text</string>
+      </array>
+      <key>UTTypeDescription</key>
+      <string>Latex</string>
+      <key>UTTypeIcons</key>
+      <dict/>
+      <key>UTTypeIdentifier</key>
+      <string>org.tug</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>latex</string>
+          <string>tex</string>
+        </array>
+        <key>public.mime-type</key>
+        <array>
+          <string>application/x-tex</string>
+        </array>
+      </dict>
+    </dict>
 	</array>
 </dict>
 </plist>

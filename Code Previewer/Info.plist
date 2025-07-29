@@ -49,6 +49,8 @@
 				<string>public.csh-script</string>
 				<string>public.ksh-script</string>
 				<string>public.tcsh-script</string>
+				<string>public.bash-script</string>
+				<string>org.n8gray.bat</string>
 				<string>public.css</string>
 				<string>public.ada-source</string>
 				<string>public.assembly-source</string>
@@ -99,7 +101,12 @@
 				<string>com.apple.dt.interfacebuilder.document.storyboard</string>
 				<string>com.bps.elm-source</string>
 				<string>com.microsoft.typescript</string>
-				<string>com.bps.typescript-source</string>
+        <string>com.bps.typescript-source</string>
+        <string>public.comma-separated-values-text</string>
+        <string>com.custom.csv-data</string>
+        <string>com.custom.ssv-data</string>
+        <string>com.custom.ios-data</string>
+        <string>com.custom.eos-data</string>
 			</array>
 			<key>QLSupportsSearchableItems</key>
 			<true/>
