@@ -601,6 +601,7 @@
 				<array>
           <string>config</string>
           <string>conf</string>
+          <string>cnf</string>
 					<string>ini</string>
 					<string>cfg</string>
 					<string>cnf</string>
@@ -741,10 +742,33 @@
 				</array>
 			</dict>
 		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.text</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>DxO PhotoLab</string>
+			<key>UTTypeIcons</key>
+			<dict>
+				<key>UTTypeIconText</key>
+				<string>DOP</string>
+			</dict>
+			<key>UTTypeIdentifier</key>
+			<string>com.dxo.dop</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>dop</string>
+				</array>
+			</dict>
+		</dict>
     <dict>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.plain-text</string>
+        <string>public.semicolon-separated-values-text</string>
       </array>
       <key>UTTypeDescription</key>
       <string>Semicolon Separated Values</string>
@@ -760,8 +784,35 @@
         </array>
         <key>public.mime-type</key>
         <array>
+          <string>text/plain</string>
           <string>text/ssv</string>
           <string>application/ssv</string>
+        </array>
+      </dict>
+    </dict>
+    <dict>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.plain-text</string>
+        <string>public.tab-separated-values-text</string>
+      </array>
+      <key>UTTypeDescription</key>
+      <string>Tab Separated Values</string>
+      <key>UTTypeIcons</key>
+      <dict/>
+      <key>UTTypeIdentifier</key>
+      <string>com.custom.tsv-data</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>tsv</string>
+        </array>
+        <key>public.mime-type</key>
+        <array>
+          <string>text/plain</string>
+          <string>text/tsv</string>
+          <string>application/tsv</string>
         </array>
       </dict>
     </dict>
@@ -1164,8 +1215,8 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>sh</string>
-					<string>bash</string>
+          <string>bash</string>
+          <string>sh</string>
 				</array>
 			</dict>
 		</dict>
@@ -1289,26 +1340,6 @@
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
-				<string>public.shell-script</string>
-			</array>
-			<key>UTTypeDescription</key>
-			<string>Batch Script</string>
-			<key>UTTypeIcons</key>
-			<dict/>
-			<key>UTTypeIdentifier</key>
-			<string>org.n8gray.bat</string>
-			<key>UTTypeTagSpecification</key>
-			<dict>
-				<key>public.filename-extension</key>
-				<array>
-					<string>bat</string>
-					<string>cmd</string>
-				</array>
-			</dict>
-		</dict>
-		<dict>
-			<key>UTTypeConformsTo</key>
-			<array>
 				<string>public.text</string>
 			</array>
 			<key>UTTypeDescription</key>
@@ -1329,6 +1360,26 @@
 				</array>
 			</dict>
 		</dict>
+    <dict>
+      <key>UTTypeConformsTo</key>
+      <array>
+        <string>public.shell-script</string>
+      </array>
+      <key>UTTypeDescription</key>
+      <string>Batch Script</string>
+      <key>UTTypeIcons</key>
+      <dict/>
+      <key>UTTypeIdentifier</key>
+      <string>org.n8gray.bat</string>
+      <key>UTTypeTagSpecification</key>
+      <dict>
+        <key>public.filename-extension</key>
+        <array>
+          <string>bat</string>
+          <string>cmd</string>
+        </array>
+      </dict>
+    </dict>
 		<dict>
 			<key>UTTypeConformsTo</key>
 			<array>
@@ -1571,30 +1622,72 @@
 				</array>
 			</dict>
 		</dict>
-    <dict>
-      <key>UTTypeConformsTo</key>
-      <array>
-        <string>public.plain-text</string>
-      </array>
-      <key>UTTypeDescription</key>
-      <string>Latex</string>
-      <key>UTTypeIcons</key>
-      <dict/>
-      <key>UTTypeIdentifier</key>
-      <string>org.tug</string>
-      <key>UTTypeTagSpecification</key>
-      <dict>
-        <key>public.filename-extension</key>
-        <array>
-          <string>latex</string>
-          <string>tex</string>
-        </array>
-        <key>public.mime-type</key>
-        <array>
-          <string>application/x-tex</string>
-        </array>
-      </dict>
-    </dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.plain-text</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Latex</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>org.tug</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>latex</string>
+					<string>tex</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>application/x-tex</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.xml</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>XMP</string>
+			<key>UTTypeIconName</key>
+			<string>XMP</string>
+			<key>UTTypeIdentifier</key>
+			<string>com.seriflabs.xmp</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>xmp</string>
+				</array>
+				<key>public.mime-type</key>
+				<array>
+					<string>application/rdf+xml</string>
+				</array>
+			</dict>
+		</dict>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.text</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>Xcode Strings</string>
+			<key>UTTypeIcons</key>
+			<dict/>
+			<key>UTTypeIdentifier</key>
+			<string>com.apple.xcode.strings-text</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>strings</string>
+				</array>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>

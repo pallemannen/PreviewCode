@@ -49,8 +49,8 @@
 				<string>public.csh-script</string>
 				<string>public.ksh-script</string>
 				<string>public.tcsh-script</string>
-				<string>public.bash-script</string>
-				<string>org.n8gray.bat</string>
+        <string>public.bash-script</string>
+        <string>org.n8gray.bat</string>
 				<string>public.css</string>
 				<string>public.ada-source</string>
 				<string>public.assembly-source</string>
@@ -101,10 +101,17 @@
 				<string>com.apple.dt.interfacebuilder.document.storyboard</string>
 				<string>com.bps.elm-source</string>
 				<string>com.microsoft.typescript</string>
-        <string>com.bps.typescript-source</string>
+				<string>com.bps.typescript-source</string>
+				<string>com.seriflabs.xmp</string>
+				<string>com.dxo.dop</string>
+				<string>com.apple.xcode.strings-text</string>
+				<string>com.apple.xml-property-list</string>
         <string>public.comma-separated-values-text</string>
         <string>com.custom.csv-data</string>
+        <string>public.semicolon-separated-values-text</string>
         <string>com.custom.ssv-data</string>
+        <string>public.tab-separated-values-text</string>
+        <string>com.custom.tsv-data</string>
         <string>com.custom.ios-data</string>
         <string>com.custom.eos-data</string>
 			</array>

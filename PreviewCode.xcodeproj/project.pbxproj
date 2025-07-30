@@ -138,8 +138,25 @@
 		C2C2F63C2E39FB9F003FA4E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		C2C2F64D2E3A8B43003FA4E4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				cisco.min.js,
+			);
+			target = 3BFD78442663E27D002AD588 /* Code Previewer */;
+		};
+		C2C2F64E2E3A8B43003FA4E4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				cisco.min.js,
+			);
+			target = 3BE0EB9A266A845B00C9924E /* Code Thumbnailer */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C2C2F63E2E3A09DB003FA4E4 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+		C2C2F63E2E3A09DB003FA4E4 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (C2C2F64D2E3A8B43003FA4E4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, C2C2F64E2E3A8B43003FA4E4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */

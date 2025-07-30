@@ -12,42 +12,9 @@ import Foundation
 import AppKit
 import UniformTypeIdentifiers
 import Highlighter
-import JavaScriptCore
-
+import SwiftCSV
 
 // FROM 1.1.0
-// Highlighter Extension Injection
-extension Highlighter {
-  func registerLanguage(name: String, jsScript: String) -> Bool {
-    print("📦 Attempting to register language: \(name)")
-    
-    guard let context = Mirror(reflecting: self).children.first(where: { $0.label == "context" })?.value as? JSContext else {
-      print("❌ Could not access JSContext")
-      return false
-    }
-    
-    context.exceptionHandler = { _, exception in
-      print("❌ JS Error while injecting language '\(name)': \(exception?.toString() ?? "unknown error")")
-    }
-    
-    print("✅ JSContext acquired")
-    
-    let wrapperScript = """
-    (function() {
-      \(jsScript)
-    })();
-    """
-    print("📜 Wrapper script ready")
-    let evalResult = context.evaluateScript(wrapperScript)
-    print("🧪 Wrapper script evaluated: \(String(describing: evalResult))")
-    
-    let isRegistered = context.evaluateScript("typeof hljs.getLanguage('\(name)') !== 'undefined'")?.toBool() ?? false
-    print("🚀 Language '\(name)' registered: \(isRegistered)")
-    
-    return isRegistered
-  }
-}
-
 // Implement as a class
 final class Common: NSObject {
   
@@ -57,6 +24,7 @@ final class Common: NSObject {
   var isThemeDark: Bool              = false
   var initError: Bool                = false
   var currentThemeName: String = BUFFOON_CONSTANTS.DEFAULT_THEME
+  
   
   // MARK: - Private Properties
   
@@ -77,13 +45,8 @@ final class Common: NSObject {
   // MARK: - Lifecycle Functions
   
   init(_ isThumbnail: Bool) {
-    super.init()
     
-    // Load the Cisco language JS script from the bundle
-    let ciscoJsURL = Bundle.main.url(forResource: "cisco.min", withExtension: "js")
-    let ciscoJsString = (try? String(contentsOf: ciscoJsURL!)) ?? ""
-    print("🧪 Cisco JS URL: \(String(describing: ciscoJsURL))")
-    print("🧪 Cisco JS String Length: \(ciscoJsString.count)")
+    super.init()
     
     // Set local values with default properties
     var highlightJsThemeName: String = BUFFOON_CONSTANTS.DEFAULT_THEME
@@ -151,22 +114,12 @@ final class Common: NSObject {
     if let hr: Highlighter = Highlighter.init() {
       hr.setTheme(highlightJsThemeName)
       hr.theme.setCodeFont(self.font!)
-      // Register Cisco language syntax
-      // Debug: check hljs presence in JSContext before registering
-      if let context = Mirror(reflecting: hr).children.first(where: { $0.label == "context" })?.value as? JSContext {
-        if let hasHljs = context.evaluateScript("typeof hljs !== 'undefined'")?.toBool(), hasHljs {
-          print("🟢 hljs is present in JSContext")
-        } else {
-          print("🔴 hljs NOT present in JSContext")
-        }
-      } else {
-        print("❌ Failed to reflect JSContext from Highlighter instance")
-      }
-      _ = hr.registerLanguage(name: "cisco", jsScript: ciscoJsString)
+      
       // Requires HighligherSwift 1.1.3
       if !isThumbnail {
         hr.theme.lineSpacing = (self.lineSpacing - 1.0) * self.fontSize
       }
+      
       self.themeBackgroundColour = hr.theme.themeBackgroundColour
       self.highlighter = hr
     } else {
@@ -197,9 +150,15 @@ final class Common: NSObject {
     //let spacedParaStyle: NSMutableParagraphStyle = NSMutableParagraphStyle.init()
     //spacedParaStyle.lineSpacing = (self.lineSpacing - 1.0) * self.fontSize
     
-    
-    if language == "csv-data" || language == "ssv-data" {
-      renderedString = getCSVHTMLTable(codeFileString)
+    if language == "csv-data" || language == "ssv-data" || language == "tsv-data"{
+      let delimiter: CSVDelimiter = {
+        switch language {
+          case "tsv-data": return .tab
+          case "ssv-data": return .semicolon
+          default: return .comma
+        }
+      }()
+      renderedString = getCSVHTMLTable(codeFileString, delimiter: delimiter)
     } else {
       if let hr: Highlighter = self.highlighter {
         renderedString = hr.highlight(codeFileString, as: language)
@@ -234,15 +193,8 @@ final class Common: NSObject {
       .font: self.font!
     ]
     
-    let failureReason = renderedString?.string ?? "nil"
-    var debugInfo = ""
-    if let langs = self.highlighter?.supportedLanguages() {
-      debugInfo = "\nAvailable languages: \(langs.joined(separator: ", "))"
-    }
-    return NSAttributedString(
-      string: "Could not render source code in (\(language)) — received: \(failureReason)\(debugInfo)",
-      attributes: errorAtts
-    )
+    return NSAttributedString.init(string: "Could not render source code in (\(language))",
+                                   attributes: errorAtts)
   }
   
   
@@ -318,16 +270,10 @@ final class Common: NSObject {
     
     // Trap 'non-standard' UTIs
     if sourceFileUTI.hasPrefix("com.apple.applescript") { return "applescript" }
-    if sourceFileUTI == "com.apple.property-list" { return "xml" }
+    if sourceFileUTI.hasSuffix("property-list") { return "xml" }
     // Standard UTIs which contain strings we need to remove on other cases
     if sourceFileUTI == "public.script" { return "bash" }
-    if sourceFileUTI == "org.n8gray.bat" { return "bash" }
     if sourceFileUTI == "public.css" { return "css" }
-    if sourceFileUTI == "public.comma-separated-values-text" { return "csv-data" }
-    if sourceFileUTI == "com.custom.csv-data" { return "csv-data" }
-    if sourceFileUTI == "com.custom.ssv-data" { return "ssv-data" }
-    if sourceFileUTI == "com.custom.ios-data" { return "cisco" }
-    if sourceFileUTI == "com.custom.eos-data" { return "cisco" }
     // FROM 1.2.0 -- Present .env files using the bash renderer
     if sourceFileUTI == "com.bps.env" { return "bash" }
     if sourceFileUTI == "com.bps.conf" { return "makefile" }
@@ -335,7 +281,7 @@ final class Common: NSObject {
     // FROM 1.2.4
     if sourceFileUTI.hasSuffix(".c-sharp") { return "c#" }
     // FROM 1.2.6 -- Assorted Xcode files
-    if sourceFileUTI.hasSuffix(".entitlements-property-list") { return "xml" }
+    //if sourceFileUTI.hasSuffix(".entitlements-property-list") { return "xml" }
     if sourceFileUTI.hasSuffix(".interfacebuilder.document.cocoa") { return "xml" }
     if sourceFileUTI.hasSuffix("interfacebuilder.document.storyboard") { return "xml" }
     // FROM 1.3.2 -- Microsoft TypeScript UTI
@@ -346,6 +292,20 @@ final class Common: NSObject {
     if sourceFileUTI.hasSuffix(".lua") { return "lua" }
     if sourceFileUTI.hasSuffix(".clojure") { return "clojure" }
     if sourceFileUTI.hasSuffix(".javascript-xml") { return "javascript" }
+    // FROM 1.3.6
+    if sourceFileUTI.hasSuffix(".xmp") { return "xml" }
+    if sourceFileUTI.hasSuffix(".dop") { return "awk" }
+    if sourceFileUTI.hasSuffix("xcode.strings-text") { return "awk" }
+    // Pallemannen additions
+    if sourceFileUTI == "org.n8gray.bat" { return "bash" }
+    if sourceFileUTI == "public.comma-separated-values-text" { return "csv-data" }
+    if sourceFileUTI == "com.custom.csv-data" { return "csv-data" }
+    if sourceFileUTI == "public.semicolon-separated-values-text" { return "ssv-data" }
+    if sourceFileUTI == "com.custom.ssv-data" { return "ssv-data" }
+    if sourceFileUTI == "public.tab-separated-values-text" { return "tsv-data" }
+    if sourceFileUTI == "com.custom.tsv-data" { return "tsv-data" }
+    if sourceFileUTI == "com.custom.ios-data" { return "cisco" }
+    if sourceFileUTI == "com.custom.eos-data" { return "cisco" }
     
     // Remaining UTIs follow a standard structure:
     // eg. `public.objective-c-source`
@@ -374,7 +334,7 @@ final class Common: NSObject {
         sourceLanguage = isForTag ? "obj-c++" : "objectivec"
       case "c-plus-plus":
         sourceLanguage = isForTag ? "c++" : "cpp"
-      case "shell", "zsh", "csh", "ksh", "tcsh", "bat", "cmd", "bash", "sh":
+      case "shell", "zsh", "csh", "ksh", "tsch", "tcsh", "bat", "cmd", "bash": // Pretty sure tsch is misspelled /Pallemannen
         if !isForTag { sourceLanguage = "bash" }
       case "pascal":
         if !isForTag { sourceLanguage = "delphi" }
@@ -461,13 +421,15 @@ final class Common: NSObject {
   /**
    Convert CSV/SSV data to an attributed HTML table with styling.
    - Parameters:
-   - rawText: The raw CSV or SSV text.
+   - rawText: The raw CSV / SSV / TSV text.
    
    - Returns: An NSAttributedString rendering the data in a styled table.
    */
-  func getCSVHTMLTable(_ rawText: String) -> NSAttributedString {
-    let delimiter: Character = rawText.contains(";") ? ";" : ","
-    let lines = rawText.split(separator: "\n", omittingEmptySubsequences: true)
+  func getCSVHTMLTable(_ rawText: String, delimiter: CSVDelimiter = .comma) -> NSAttributedString {
+    guard let csv = try? CSV<Enumerated>(string: rawText, delimiter: delimiter) else {
+      return NSAttributedString(string: "Could not parse data as CSV/SSV/TSV.")
+    }
+    let rows = csv.rows
     let bundle = Bundle.main
     let cssBundleURL = bundle.resourceURL?
       .appendingPathComponent("Highlighter_Highlighter.bundle")
@@ -497,41 +459,40 @@ final class Common: NSObject {
     )
     let evenRowColorCSS = evenRowColor.usingColorSpace(.deviceRGB)?.rgbString ?? "#f0f0f0"
     var html = """
-      <html><head>
-        <style>
-          \(themeCSS)
-          body {
-            font-family: monospace;
-            font-size: \(self.fontSize)px;
-            padding: 0.5em;
-          }
-          table {
-            border-spacing: 0;
-            width: 100%;
-          }
-          th, td {
-            overflow: hidden;
-            text-align: left;
-            white-space: nowrap;
-          }
-          tbody tr:first-child {
-            font-weight: bold;
-          }
-          tbody tr:nth-child(even) {
-            background-color: \(evenRowColorCSS);
-          }
-        </style>
-      </head><body class="hljs"><table>
-    """
-    for line in lines {
-      let fields = line.split(separator: delimiter, omittingEmptySubsequences: false)
-      let row = fields.enumerated().map { index, field in
+        <html><head>
+          <style>
+            \(themeCSS)
+            body {
+              font-family: monospace;
+              font-size: \(self.fontSize)px;
+              padding: 0.5em;
+            }
+            table {
+              border-spacing: 0;
+              width: 100%;
+            }
+            th, td {
+              overflow: hidden;
+              text-align: left;
+              white-space: nowrap;
+            }
+            tbody tr:first-child {
+              font-weight: bold;
+            }
+            tbody tr:nth-child(even) {
+              background-color: \(evenRowColorCSS);
+            }
+          </style>
+        </head><body class="hljs"><table>
+      """
+    for row in rows {
+      let rowHTML = row.enumerated().map { index, field in
         let cls = columnClasses[index % columnClasses.count]
-        let text = String(field).htmlEscaped
+        let text = field.isEmpty ? "&nbsp;" : String(field).htmlEscaped
         let td = text.count > 6 ? String(text.prefix(4)) + "&hellip;" : text
         return "<td class=\"\(cls)\"><nobr>\(td.replacingOccurrences(of: " ", with: "&nbsp;"))</nobr></td>"
-      }
-      html += "<tr>" + row.joined() + "</tr>"
+      }.joined()
+      html += "<tr>" + rowHTML + "</tr>"
     }
     html += "</table></body></html>"
     let tempURL = FileManager.default.temporaryDirectory.appendingPathComponent("debug-preview.html")
@@ -567,7 +528,6 @@ extension Data {
   }
 }
 
-
 // Utility extension for NSColor to get rgbString for CSS
 extension NSColor {
   var rgbString: String {
@@ -578,6 +538,7 @@ extension NSColor {
   }
 }
 
+// Extension for htmlspecialchars
 extension String {
   var htmlEscaped: String {
     self
@@ -588,4 +549,3 @@ extension String {
       .replacingOccurrences(of: "'", with: "&#39;")
   }
 }
-

@@ -1,0 +1,3 @@
+[submodule "External/highlightjs-cisco-cli"]
+	path = External/highlightjs-cisco-cli
+	url = https://github.com/BMatheas/highlightjs-cisco-cli.git
