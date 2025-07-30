@@ -11,15 +11,17 @@
 		3B1108BA26714AE700A36A48 /* Highlighter in Frameworks */ = {isa = PBXBuildFile; productRef = 3B1108B926714AE700A36A48 /* Highlighter */; };
 		3B1108BC26714AED00A36A48 /* Highlighter in Frameworks */ = {isa = PBXBuildFile; productRef = 3B1108BB26714AED00A36A48 /* Highlighter */; };
 		3B271DCA268B0A9B00EFC72C /* themes-list.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B271DC9268B0A9B00EFC72C /* themes-list.json */; };
+		3B2D12E42E2A810500046D72 /* FeedbackAppDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D12E32E2A810500046D72 /* FeedbackAppDelegateExtensions.swift */; };
+		3B2D12E62E2A82ED00046D72 /* WhatsNewAppDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D12E52E2A82ED00046D72 /* WhatsNewAppDelegateExtensions.swift */; };
+		3B2D12E82E2A85C100046D72 /* SettingsAppDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2D12E72E2A85C100046D72 /* SettingsAppDelegateExtensions.swift */; };
 		3B3F580D29D5892900E227C7 /* PCImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3F580C29D5892900E227C7 /* PCImageView.swift */; };
 		3B6ABAC52669649500A436AA /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD785E2663E4C9002AD588 /* Common.swift */; };
 		3B6ABACC2669703800A436AA /* PreviewTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6ABACB2669703800A436AA /* PreviewTextView.swift */; };
-		3B7D83D12A8A2FEE008A4B2E /* code-sample.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D83D02A8A2FEE008A4B2E /* code-sample.txt */; };
 		3B95C9312666222D00C7CC14 /* Highlight.js Licence in Resources */ = {isa = PBXBuildFile; fileRef = 3B95C92F2666222D00C7CC14 /* Highlight.js Licence */; };
 		3B95C9322666222D00C7CC14 /* Highlightr Licence in Resources */ = {isa = PBXBuildFile; fileRef = 3B95C9302666222D00C7CC14 /* Highlightr Licence */; };
 		3BA5D03B269081BF00AF4EF2 /* PMFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA5D03A269081BF00AF4EF2 /* PMFont.swift */; };
 		3BAE671B28D4D3AD001532BD /* GenericFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE671A28D4D3AD001532BD /* GenericFontExtensions.swift */; };
-		3BDE3EF6267CE9890037351C /* GenericExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE3EF5267CE9890037351C /* GenericExtensions.swift */; };
+		3BDE3EF6267CE9890037351C /* GenericAppDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE3EF5267CE9890037351C /* GenericAppDelegateExtensions.swift */; };
 		3BE0EB9D266A845B00C9924E /* QuickLookThumbnailing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE0EB9C266A845B00C9924E /* QuickLookThumbnailing.framework */; };
 		3BE0EB9E266A845B00C9924E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BFD78472663E27D002AD588 /* Quartz.framework */; };
 		3BE0EBA1266A845B00C9924E /* ThumbnailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0EBA0266A845B00C9924E /* ThumbnailProvider.swift */; };
@@ -38,9 +40,12 @@
 		3BFD78592663E2C9002AD588 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD78582663E2C9002AD588 /* Constants.swift */; };
 		3BFD785A2663E2C9002AD588 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD78582663E2C9002AD588 /* Constants.swift */; };
 		3BFD78602663E4C9002AD588 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFD785E2663E4C9002AD588 /* Common.swift */; };
-		C2F25B552E361B1E00F9B13F /* SendFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F25B542E361B1900F9B13F /* SendFeedback.swift */; };
-		C2F25B572E361BC100F9B13F /* DevConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F25B562E361BA900F9B13F /* DevConstants.swift */; };
-		C2F25B592E36200900F9B13F /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2F25B582E36200900F9B13F /* Asset.xcassets */; };
+		C2C2F6392E39C131003FA4E4 /* AppCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C2F6382E39C129003FA4E4 /* AppCodes.swift */; };
+		C2C2F63B2E39C3D1003FA4E4 /* SendFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C2F63A2E39C3C9003FA4E4 /* SendFeedback.swift */; };
+		C2C2F63D2E39FB9F003FA4E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C2F63C2E39FB9F003FA4E4 /* Assets.xcassets */; };
+		C2C2F6442E3A1FDE003FA4E4 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = C2C2F6432E3A1FDE003FA4E4 /* SwiftCSV */; };
+		C2C2F6462E3A2252003FA4E4 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = C2C2F6452E3A2252003FA4E4 /* SwiftCSV */; };
+		C2C2F6482E3A225E003FA4E4 /* SwiftCSV in Frameworks */ = {isa = PBXBuildFile; productRef = C2C2F6472E3A225E003FA4E4 /* SwiftCSV */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,16 +96,18 @@
 
 /* Begin PBXFileReference section */
 		3B271DC9268B0A9B00EFC72C /* themes-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "themes-list.json"; sourceTree = "<group>"; };
+		3B2D12E32E2A810500046D72 /* FeedbackAppDelegateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackAppDelegateExtensions.swift; sourceTree = "<group>"; };
+		3B2D12E52E2A82ED00046D72 /* WhatsNewAppDelegateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewAppDelegateExtensions.swift; sourceTree = "<group>"; };
+		3B2D12E72E2A85C100046D72 /* SettingsAppDelegateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAppDelegateExtensions.swift; sourceTree = "<group>"; };
 		3B34F5022BE0380200CB8679 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		3B3F580C29D5892900E227C7 /* PCImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PCImageView.swift; sourceTree = "<group>"; };
 		3B6ABACB2669703800A436AA /* PreviewTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewTextView.swift; sourceTree = "<group>"; };
-		3B7D83D02A8A2FEE008A4B2E /* code-sample.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "code-sample.txt"; sourceTree = "<group>"; };
 		3B95C92F2666222D00C7CC14 /* Highlight.js Licence */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Highlight.js Licence"; sourceTree = "<group>"; };
 		3B95C9302666222D00C7CC14 /* Highlightr Licence */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Highlightr Licence"; sourceTree = "<group>"; };
 		3BA5D03A269081BF00AF4EF2 /* PMFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMFont.swift; sourceTree = "<group>"; };
 		3BAE671A28D4D3AD001532BD /* GenericFontExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFontExtensions.swift; sourceTree = "<group>"; };
 		3BB8E9102935FF7E00C6D452 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		3BDE3EF5267CE9890037351C /* GenericExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericExtensions.swift; sourceTree = "<group>"; };
+		3BDE3EF5267CE9890037351C /* GenericAppDelegateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAppDelegateExtensions.swift; sourceTree = "<group>"; };
 		3BE0EB9B266A845B00C9924E /* Code Thumbnailer.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Code Thumbnailer.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE0EB9C266A845B00C9924E /* QuickLookThumbnailing.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLookThumbnailing.framework; path = System/Library/Frameworks/QuickLookThumbnailing.framework; sourceTree = SDKROOT; };
 		3BE0EBA0266A845B00C9924E /* ThumbnailProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailProvider.swift; sourceTree = "<group>"; };
@@ -126,24 +133,13 @@
 		3BFD78502663E27D002AD588 /* Code_Previewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Code_Previewer.entitlements; sourceTree = "<group>"; };
 		3BFD78582663E2C9002AD588 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3BFD785E2663E4C9002AD588 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		C2F25B542E361B1900F9B13F /* SendFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedback.swift; sourceTree = "<group>"; };
-		C2F25B562E361BA900F9B13F /* DevConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevConstants.swift; sourceTree = "<group>"; };
-		C2F25B582E36200900F9B13F /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
+		C2C2F6382E39C129003FA4E4 /* AppCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCodes.swift; sourceTree = "<group>"; };
+		C2C2F63A2E39C3C9003FA4E4 /* SendFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendFeedback.swift; sourceTree = "<group>"; };
+		C2C2F63C2E39FB9F003FA4E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C29BF0B02E38812B00E5B1F0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				cisco.min.js,
-			);
-			target = 3BFD78132663E16D002AD588 /* PreviewCode */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C29BF0AF2E38811F00E5B1F0 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (C29BF0B02E38812B00E5B1F0 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
-		C2F25B5A2E3621CD00F9B13F /* new */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = new; sourceTree = "<group>"; };
+		C2C2F63E2E3A09DB003FA4E4 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BE0EB9D266A845B00C9924E /* QuickLookThumbnailing.framework in Frameworks */,
+				C2C2F6482E3A225E003FA4E4 /* SwiftCSV in Frameworks */,
 				3B1108BC26714AED00A36A48 /* Highlighter in Frameworks */,
 				3BE0EB9E266A845B00C9924E /* Quartz.framework in Frameworks */,
 			);
@@ -162,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1108B826714ADA00A36A48 /* Highlighter in Frameworks */,
+				C2C2F6442E3A1FDE003FA4E4 /* SwiftCSV in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C2F6462E3A2252003FA4E4 /* SwiftCSV in Frameworks */,
 				3B1108BA26714AE700A36A48 /* Highlighter in Frameworks */,
 				3BFD78482663E27D002AD588 /* Quartz.framework in Frameworks */,
 			);
@@ -213,7 +212,6 @@
 		3BFD780B2663E16D002AD588 = {
 			isa = PBXGroup;
 			children = (
-				C29BF0AF2E38811F00E5B1F0 /* Resources */,
 				3BFD78162663E16D002AD588 /* PreviewCode */,
 				3BFD78492663E27D002AD588 /* Code Previewer */,
 				3BE0EB9F266A845B00C9924E /* Code Thumbnailer */,
@@ -240,23 +238,25 @@
 		3BFD78162663E16D002AD588 /* PreviewCode */ = {
 			isa = PBXGroup;
 			children = (
-				C2F25B5A2E3621CD00F9B13F /* new */,
+				C2C2F63E2E3A09DB003FA4E4 /* Resources */,
+				C2C2F63A2E39C3C9003FA4E4 /* SendFeedback.swift */,
+				C2C2F6382E39C129003FA4E4 /* AppCodes.swift */,
 				3BFD78582663E2C9002AD588 /* Constants.swift */,
 				3BFD78172663E16D002AD588 /* AppDelegate.swift */,
+				3B2D12E72E2A85C100046D72 /* SettingsAppDelegateExtensions.swift */,
+				3B2D12E32E2A810500046D72 /* FeedbackAppDelegateExtensions.swift */,
+				3B2D12E52E2A82ED00046D72 /* WhatsNewAppDelegateExtensions.swift */,
+				3BDE3EF5267CE9890037351C /* GenericAppDelegateExtensions.swift */,
+				3BAE671A28D4D3AD001532BD /* GenericFontExtensions.swift */,
 				3BFBEC3B2664058400B4E70C /* ThemeTableCellView.swift */,
 				3B6ABACB2669703800A436AA /* PreviewTextView.swift */,
 				3B3F580C29D5892900E227C7 /* PCImageView.swift */,
 				3BA5D03A269081BF00AF4EF2 /* PMFont.swift */,
-				3BDE3EF5267CE9890037351C /* GenericExtensions.swift */,
-				3BAE671A28D4D3AD001532BD /* GenericFontExtensions.swift */,
 				3BFD781B2663E16E002AD588 /* MainMenu.xib */,
 				3BFD781E2663E16E002AD588 /* Info.plist */,
 				3B271DC9268B0A9B00EFC72C /* themes-list.json */,
-				C2F25B562E361BA900F9B13F /* DevConstants.swift */,
-				3B7D83D02A8A2FEE008A4B2E /* code-sample.txt */,
-				C2F25B542E361B1900F9B13F /* SendFeedback.swift */,
 				3BFD781F2663E16E002AD588 /* PreviewCode.entitlements */,
-				C2F25B582E36200900F9B13F /* Asset.xcassets */,
+				C2C2F63C2E39FB9F003FA4E4 /* Assets.xcassets */,
 			);
 			path = PreviewCode;
 			sourceTree = "<group>";
@@ -320,6 +320,7 @@
 			name = "Code Thumbnailer";
 			packageProductDependencies = (
 				3B1108BB26714AED00A36A48 /* Highlighter */,
+				C2C2F6472E3A225E003FA4E4 /* SwiftCSV */,
 			);
 			productName = "Code Thumbnailer";
 			productReference = 3BE0EB9B266A845B00C9924E /* Code Thumbnailer.appex */;
@@ -341,11 +342,12 @@
 				3BE0EBA5266A845B00C9924E /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				C2F25B5A2E3621CD00F9B13F /* new */,
+				C2C2F63E2E3A09DB003FA4E4 /* Resources */,
 			);
 			name = PreviewCode;
 			packageProductDependencies = (
 				3B1108B726714ADA00A36A48 /* Highlighter */,
+				C2C2F6432E3A1FDE003FA4E4 /* SwiftCSV */,
 			);
 			productName = PreviewCode;
 			productReference = 3BFD78142663E16D002AD588 /* PreviewCode.app */;
@@ -402,6 +404,7 @@
 			name = "Code Previewer";
 			packageProductDependencies = (
 				3B1108B926714AE700A36A48 /* Highlighter */,
+				C2C2F6452E3A2252003FA4E4 /* SwiftCSV */,
 			);
 			productName = "Code Previewer";
 			productReference = 3BFD78452663E27D002AD588 /* Code Previewer.appex */;
@@ -415,7 +418,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1600;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					3BE0EB9A266A845B00C9924E = {
 						CreatedOnToolsVersion = 12.5;
@@ -447,6 +450,7 @@
 			mainGroup = 3BFD780B2663E16D002AD588;
 			packageReferences = (
 				3B1108B626714ADA00A36A48 /* XCRemoteSwiftPackageReference "HighlighterSwift" */,
+				C2C2F6422E3A1FDE003FA4E4 /* XCRemoteSwiftPackageReference "SwiftCSV" */,
 			);
 			productRefGroup = 3BFD78152663E16D002AD588 /* Products */;
 			projectDirPath = "";
@@ -473,9 +477,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F25B592E36200900F9B13F /* Asset.xcassets in Resources */,
 				3B271DCA268B0A9B00EFC72C /* themes-list.json in Resources */,
-				3B7D83D12A8A2FEE008A4B2E /* code-sample.txt in Resources */,
+				C2C2F63D2E39FB9F003FA4E4 /* Assets.xcassets in Resources */,
 				3BFD781D2663E16E002AD588 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,17 +524,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2D12E82E2A85C100046D72 /* SettingsAppDelegateExtensions.swift in Sources */,
 				3BFD78182663E16D002AD588 /* AppDelegate.swift in Sources */,
 				3BAE671B28D4D3AD001532BD /* GenericFontExtensions.swift in Sources */,
 				3BFBEC3C2664058400B4E70C /* ThemeTableCellView.swift in Sources */,
 				3BA5D03B269081BF00AF4EF2 /* PMFont.swift in Sources */,
 				3B6ABACC2669703800A436AA /* PreviewTextView.swift in Sources */,
-				C2F25B572E361BC100F9B13F /* DevConstants.swift in Sources */,
-				3BDE3EF6267CE9890037351C /* GenericExtensions.swift in Sources */,
+				3BDE3EF6267CE9890037351C /* GenericAppDelegateExtensions.swift in Sources */,
 				3B3F580D29D5892900E227C7 /* PCImageView.swift in Sources */,
 				3B6ABAC52669649500A436AA /* Common.swift in Sources */,
-				C2F25B552E361B1E00F9B13F /* SendFeedback.swift in Sources */,
+				3B2D12E42E2A810500046D72 /* FeedbackAppDelegateExtensions.swift in Sources */,
 				3BFD78592663E2C9002AD588 /* Constants.swift in Sources */,
+				C2C2F63B2E39C3D1003FA4E4 /* SendFeedback.swift in Sources */,
+				3B2D12E62E2A82ED00046D72 /* WhatsNewAppDelegateExtensions.swift in Sources */,
+				C2C2F6392E39C131003FA4E4 /* AppCodes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,9 +617,8 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Code Thumbnailer/Code_Thumbnailer.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				CURRENT_PROJECT_VERSION = 100;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 58M4G8R6HC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -627,12 +632,13 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = "$(MARKETING_VERSION)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3.6;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bps.PreviewCode.Code-Thumbnailer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -643,9 +649,8 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Code Thumbnailer/Code_Thumbnailer.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				CURRENT_PROJECT_VERSION = 100;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 58M4G8R6HC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -656,12 +661,13 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = "$(MARKETING_VERSION)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3.6;
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bps.PreviewCode.Code-Thumbnailer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -705,6 +711,7 @@
 				CURRENT_PROJECT_VERSION = 94;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Y5J3K52DNA;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -772,6 +779,7 @@
 				CURRENT_PROJECT_VERSION = 94;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Y5J3K52DNA;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -803,7 +811,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				CURRENT_PROJECT_VERSION = 100;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 58M4G8R6HC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -820,13 +828,14 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = "$(MARKETING_VERSION)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3.6;
 				OTHER_LDFLAGS = "";
 				OTHER_SWIFT_FLAGS = "-D TARGET_IS_PC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bps.PreviewCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -840,7 +849,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				CURRENT_PROJECT_VERSION = 100;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 58M4G8R6HC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -853,14 +862,15 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = "$(MARKETING_VERSION)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3.6;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_SWIFT_FLAGS = "-D TARGET_IS_PC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bps.PreviewCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -869,6 +879,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -891,6 +902,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -922,6 +934,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bps.PreviewCodeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -942,6 +955,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bps.PreviewCodeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -954,9 +968,8 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Code Previewer/Code_Previewer.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				CURRENT_PROJECT_VERSION = 100;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 58M4G8R6HC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -967,8 +980,8 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = "$(MARKETING_VERSION)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -977,6 +990,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bps.PreviewCode.Code-Previewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -987,9 +1001,8 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "Code Previewer/Code_Previewer.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = "${CURRENT_PROJECT_VERSION}";
+				CURRENT_PROJECT_VERSION = 100;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 58M4G8R6HC;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1000,8 +1013,8 @@
 					"@executable_path/../../../../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "";
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
-				MARKETING_VERSION = "$(MARKETING_VERSION)";
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.3.6;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1009,6 +1022,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bps.PreviewCode.Code-Previewer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				REGISTER_APP_GROUPS = YES;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -1076,10 +1090,18 @@
 /* Begin XCRemoteSwiftPackageReference section */
 		3B1108B626714ADA00A36A48 /* XCRemoteSwiftPackageReference "HighlighterSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/smittytone/HighlighterSwift.git";
+			repositoryURL = "https://github.com/pallemannen/HighlighterSwift.git";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		C2C2F6422E3A1FDE003FA4E4 /* XCRemoteSwiftPackageReference "SwiftCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swiftcsv/SwiftCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1099,6 +1121,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B1108B626714ADA00A36A48 /* XCRemoteSwiftPackageReference "HighlighterSwift" */;
 			productName = Highlighter;
+		};
+		C2C2F6432E3A1FDE003FA4E4 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2C2F6422E3A1FDE003FA4E4 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+		C2C2F6452E3A2252003FA4E4 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2C2F6422E3A1FDE003FA4E4 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
+		};
+		C2C2F6472E3A225E003FA4E4 /* SwiftCSV */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C2C2F6422E3A1FDE003FA4E4 /* XCRemoteSwiftPackageReference "SwiftCSV" */;
+			productName = SwiftCSV;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
